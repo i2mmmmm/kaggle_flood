@@ -12,26 +12,26 @@ train 데이터의 **EDA 실행**
 2. (1117957, 22) 크기의 데이터 프레임
 
 📃 데이터 변수 설명
-MonsoonIntensity: 몬순 강도
-TopographyDrainage: 지형 배수
-RiverManagement: 강 관리
-Deforestation: 산림 벌채
-Urbanization: 도시화
-ClimateChange: 기후 변화
-DamsQuality: 댐의 품질
-Siltation: 침적
-AgriculturalPractices: 농업 관행
-Encroachments: 침해
-IneffectiveDisasterPreparedness: 비효과적인 재난 대비
-DrainageSystems: 배수 시스템
-CoastalVulnerability: 해안 취약성
-Landslides: 산사태
-Watersheds: 유역
-DeterioratingInfrastructure: 악화되는 인프라
-PopulationScore: 인구 점수
-WetlandLoss: 습지 손실
-InadequatePlanning: 부적절한 계획
-PoliticalFactors: 정치적 요인
+MonsoonIntensity: 몬순 강도  
+TopographyDrainage: 지형 배수  
+RiverManagement: 강 관리  
+Deforestation: 산림 벌채  
+Urbanization: 도시화  
+ClimateChange: 기후 변화  
+DamsQuality: 댐의 품질  
+Siltation: 침적  
+AgriculturalPractices: 농업 관행  
+Encroachments: 침해  
+IneffectiveDisasterPreparedness: 비효과적인 재난 대비  
+DrainageSystems: 배수 시스템  
+CoastalVulnerability: 해안 취약성  
+Landslides: 산사태  
+Watersheds: 유역  
+DeterioratingInfrastructure: 악화되는 인프라  
+PopulationScore: 인구 점수  
+WetlandLoss: 습지 손실  
+InadequatePlanning: 부적절한 계획  
+PoliticalFactors: 정치적 요인  
 
 ---
 
