@@ -1,17 +1,18 @@
 # kaggle_flood
-Kaggle 홍수 예측 대회
+Kaggle 홍수 예측 대회  
 ---
+https://www.kaggle.com/competitions/playground-series-s4e5
 ## 2024.05.25
 
-캐글 참가 신청
+- 캐글 참가 신청
 
 └ `google colab` 환경에서 캐글 연결해서 데이터 가져오기 **성공**
 
-train 데이터의 **EDA 실행**
+- train 데이터의 **EDA 실행**
 1. 전체 null 값 없음
 2. (1117957, 22) 크기의 데이터 프레임
 
-📃 데이터 변수 설명
+- 📃 데이터 변수 설명  
 MonsoonIntensity: 몬순 강도  
 TopographyDrainage: 지형 배수  
 RiverManagement: 강 관리  
@@ -35,7 +36,7 @@ PoliticalFactors: 정치적 요인
 
 ---
 
-**시각화**
+- **시각화**
 
 1. 각 변수에 따른 산점도 (대체로 비슷한 형태)
 2. 상관관계 히트맵 (모든 변수가 같은 색으로 표시)
@@ -43,27 +44,22 @@ PoliticalFactors: 정치적 요인
 
 ---
 
-**baseline**
+- **baseline**
 
-train 데이터로 회귀분석
-
+train 데이터로 회귀분석  
 R2 Score: 0.8449901321915165 // 
 MSE: 0.00040393373468618546
 
 ---
 
-**feature engineering**
+- **feature engineering**
 
-3개 변수 추가
+3개 변수 추가  
+`train['Climate_Risk'] = train['MonsoonIntensity'] * train['ClimateChange']`  
+`train['Infrastructure_Risk'] = train['DamsQuality'] * train['DrainageSystems']`  
+`train['wet_Risk'] = train['WetlandLoss'] + train['Encroachments']`  
 
-`train['Climate_Risk'] = train['MonsoonIntensity'] * train['ClimateChange']`
-
-`train['Infrastructure_Risk'] = train['DamsQuality'] * train['DrainageSystems'] `
-
-`train['wet_Risk'] = train['WetlandLoss'] + train['Encroachments'] `
-
-추가 이후 회귀 결과
-
+추가 이후 회귀 결과  
 R2 Score: 0.8449834588748664 // 
 MSE: 0.00040395112440308126
 
