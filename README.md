@@ -91,3 +91,36 @@ MSE: 0.001002567229880375
 </details>
 
 **제출결과 : 0.86089**
+
+<details>
+<summary>
+2024.05.28
+</summary>
+
+  
+    df['CombinedUrbanImpact'] = df['Urbanization'] * df['PopulationScore']
+    df['EnvironmentalDegradation'] = df['Deforestation'] + df['Siltation'] + df['WetlandLoss']
+    df['InfrastructureVulnerability'] = df['DeterioratingInfrastructure'] + df['DrainageSystems'] + df['DamsQuality']
+    df['NaturalDisasterRisk'] = df['MonsoonIntensity'] + df['ClimateChange'] + df['Landslides'] + df['CoastalVulnerability']
+    df['ManagementEffectiveness'] = df['RiverManagement'] + df['AgriculturalPractices'] + df['Encroachments'] + df['InadequatePlanning'] + df['PoliticalFactors']
+    df['Infrastructure_Risk'] = df['DamsQuality'] * df['DrainageSystems']
+    df['wet_Risk'] = df['WetlandLoss'] * df['Encroachments']
+
+    df['total'] = df[BASE_FEATURES].sum(axis=1)
+    df['mean'] = df[BASE_FEATURES].mean(axis=1)
+    df['std'] = df[BASE_FEATURES].std(axis=1)
+    df['max'] = df[BASE_FEATURES].max(axis=1)
+    df['min'] = df[BASE_FEATURES].min(axis=1)
+    df['median'] = df[BASE_FEATURES].median(axis=1)
+    df['ptp'] = df[BASE_FEATURES].values.ptp(axis=1)
+    df['q25'] = df[BASE_FEATURES].quantile(0.25, axis=1)
+    df['q75'] = df[BASE_FEATURES].quantile(0.75, axis=1)
+    df['ClimateImpact'] = df['MonsoonIntensity'] + df['ClimateChange']
+    df['AnthropogenicPressure'] = df['Deforestation'] + df['Urbanization'] + df['AgriculturalPractices'] + df['Encroachments']
+    df['InfrastructureQuality'] = df['DamsQuality'] + df['DrainageSystems'] + df['DeterioratingInfrastructure']
+    df['CoastalVulnerabilityTotal'] = df['CoastalVulnerability'] + df['Landslides']
+    df['PreventiveMeasuresEfficiency'] = df['RiverManagement'] + df['IneffectiveDisasterPreparedness'] + df['InadequatePlanning']
+    df['EcosystemImpact'] = df['WetlandLoss'] + df['Watersheds']
+    df['SocioPoliticalContext'] = df['PopulationScore'] * df['PoliticalFactors']
+
+    다수의 시도 끝에 최적 engineering
