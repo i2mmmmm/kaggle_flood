@@ -85,7 +85,7 @@ MSE: 0.0008954422956993097
 2. grandient boosting  
 R2 Score: 0.6142897853539955  
 MSE: 0.001002567229880375
-3. 
+
 
 
 </details>
@@ -123,4 +123,28 @@ MSE: 0.001002567229880375
     df['EcosystemImpact'] = df['WetlandLoss'] + df['Watersheds']
     df['SocioPoliticalContext'] = df['PopulationScore'] * df['PoliticalFactors']
 
-    다수의 시도 끝에 최적 engineering
+    다수의 시도 끝에 최적 feature engineering
+</details>
+
+<details>
+<summary>
+2024.05.29
+</summary>
+
+catboost
+ann_MLP 모델링
+[in vscode]
+
+</details>
+
+
+<details>
+<summary>
+2024.05.30
+</summary>  
+ensemble 모델링
+xgb + lgb + catboost
+4개 모델에 대하여 앙상블 시행
+</details>
+
+**제출결과 : 0.86851**
