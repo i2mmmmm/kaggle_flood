@@ -3,6 +3,11 @@ Kaggle 홍수 예측 대회
 ---
 https://www.kaggle.com/competitions/playground-series-s4e5
 
+
+
+`vscode - python 3.8.19`  
+`google colab`
+
 <details>
 <summary>
 2024.05.25
