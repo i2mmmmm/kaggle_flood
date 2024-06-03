@@ -90,7 +90,38 @@ MSE: 0.0008954422956993097
 2. grandient boosting  
 R2 Score: 0.6142897853539955  
 MSE: 0.001002567229880375
+3. lightgbm  
+LightGBM R2 Score: 0.7665943094099801  
+LightGBM MSE: 0.0006082221321130316
+4. xgboost  
+XGBoost R2 Score: 0.81016914113262  
+XGBoost MSE: 0.0004946722996740113
+5. catboost  
+CatBoost R2 Score: **0.846**3552061638621  
+CatBoost MSE: 0.0004003765454854714
 
+
+</details>
+
+**제출결과 : 0.84709**
+<details>
+<summary>
+2024.05.27
+</summary>
+- 최적 하이퍼파라미터 찾기
+
+RandomizedSearchCV  
+`Best Hyperparameters: {'learning_rate': 0.1, 'l2_leaf_reg': 6, 'iterations': 1000, 'depth': 9}  
+CatBoost R2 Score : 0.8535909724540186  
+CatBoost MSE : 0.00038119933963952704
+
+- ANN 기반 MLP
+RELU
+`model = Sequential()`  
+`model.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))`  
+`model.add(Dense(32, activation='relu'))`  
+`model.add(Dense(1))`
+ReLU 활성화 함수 사용, 3개 Dense 층(64, 32, 1), Adam 옵티마이저 사용
 
 
 </details>
