@@ -140,6 +140,22 @@ catboost
 ann_MLP 모델링
 [in vscode]
 
+**모델 설계**  
+`model = Sequential()`  
+`model.add(Dense(64, activation='relu', input_shape=(X_train_scaled.shape[1],)))`  
+`model.add(Dense(32, activation='relu'))`  
+`model.add(Dense(1))`
+
+
+**모델 설계**  
+`model = Sequential()`  
+`model.add(Dense(128, activation='relu', input_shape=(X_train.shape[1],)))`  
+`model.add(Dropout(0.3))`  
+`model.add(Dense(64, activation='relu'))`  
+`model.add(Dropout(0.3))`  
+`model.add(Dense(32, activation='relu'))`  
+`model.add(Dense(1))`
+
 </details>
 
 
