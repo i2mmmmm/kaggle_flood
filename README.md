@@ -156,6 +156,9 @@ ann_MLP 모델링
 `model.add(Dense(32, activation='relu'))`  
 `model.add(Dense(1))`
 
+`param_grid = {'batch_size': [16, 32, 64], 'epochs': [50, 100, 200], 'optimizer': [Adam(), RMSprop()]}`
+
+
 </details>
 
 
