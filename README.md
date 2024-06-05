@@ -1,6 +1,5 @@
-# kaggle_flood
-Kaggle 홍수 예측 대회  
----
+# Kaggle 홍수 예측 대회  
+
 https://www.kaggle.com/competitions/playground-series-s4e5
 
 ---
