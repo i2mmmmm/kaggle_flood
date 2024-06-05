@@ -13,8 +13,10 @@ https://www.kaggle.com/competitions/playground-series-s4e5
  Linear Regression -> 0.84458
 
 ---
+
 📊 **EDA**  
-1) 데이터 변수 설명
+<details>
+ <summary> 1) 데이터 변수 설명 </summary>
 
 MonsoonIntensity: 몬순 강도  
 TopographyDrainage: 지형 배수  
@@ -36,8 +38,9 @@ PopulationScore: 인구 점수
 WetlandLoss: 습지 손실  
 InadequatePlanning: 부적절한 계획  
 PoliticalFactors: 정치적 요인
+</details>
 
-2) 특징
+2) 데이터 특징
 
 각 변수 1 ~ 17 까지의 정수로 구성.  
 히트맵을 통해 보여지는 상관관계 없음.  
@@ -48,7 +51,8 @@ PoliticalFactors: 정치적 요인
 
 🎛️ **Feature Engineering**  
 
-feature 추가 
+<details>
+<summary> feature 추가 </summary> 
 
     df['CombinedUrbanImpact'] = df['Urbanization'] * df['PopulationScore']
     df['EnvironmentalDegradation'] = df['Deforestation'] + df['Siltation'] + df['WetlandLoss']
@@ -74,35 +78,48 @@ feature 추가
     df['PreventiveMeasuresEfficiency'] = df['RiverManagement'] + df['IneffectiveDisasterPreparedness'] + df['InadequatePlanning']
     df['EcosystemImpact'] = df['WetlandLoss'] + df['Watersheds']
     df['SocioPoliticalContext'] = df['PopulationScore'] * df['PoliticalFactors']
+   </details>
+
+  ---
    
 🎛️ **Model**  
 
 0. 회귀분석 (r2 : 0.844)  
 1. 랜덤포레스트 (r2 : 0.655)  
 2. gradient boosting (r2 : 0.614)  
-3. catboost (r2 : 
+3. catboost
 4. xgboost
 5. lgbm
 4. ann_MLP
 
-  
+---
 
+🎛️ **하이퍼 파라미터**
 
-**모델 설계**  
-`model = Sequential()`  
-`model.add(Dense(64, activation='relu', input_shape=(X_train_scaled.shape[1],)))`  
-`model.add(Dense(32, activation='relu'))`  
-`model.add(Dense(1))`
+`lgbm_params = {'num_leaves': 183,
+    'learning_rate': 0.01183688880802108,
+    'n_estimators': 577,
+    'subsample_for_bin': 165697,
+    'min_child_samples': 114,
+    'reg_alpha': 2.075080888948164e-06,
+    'reg_lambda': 3.838938366471552e-07,
+    'colsample_bytree': 0.9634044234652241,
+    'subsample': 0.9592138618622019,
+    'max_depth': 9
+}`
 
+`cat_params = {
+    'n_estimators':8000,
+    'random_state':0,
+    'learning_rate': 0.011277016304363601,
+    'depth': 8,
+    'subsample': 0.8675506657380021,
+    # 'colsample_bylevel': 0.7183884158632279,
+    'min_data_in_leaf': 98,
+    'bootstrap_type': 'Bernoulli'
+}`
 
-**모델 설계**  
-`model = Sequential()`  
-`model.add(Dense(128, activation='relu', input_shape=(X_train.shape[1],)))`  
-`model.add(Dropout(0.3))`  
-`model.add(Dense(64, activation='relu'))`  
-`model.add(Dropout(0.3))`  
-`model.add(Dense(32, activation='relu'))`  
-`model.add(Dense(1))`
+---
 
-`param_grid = {'batch_size': [16, 32, 64], 'epochs': [50, 100, 200], 'optimizer': [Adam(), RMSprop()]}`
-
+🫧 **ensemble**
+stacking
